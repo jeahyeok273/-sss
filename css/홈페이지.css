@@ -1,0 +1,515 @@
+*{margin: 0; padding: 0;}
+a{color: black; text-decoration: none;}
+li{list-style: none;}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    height: 100%;    
+}
+
+body {
+    background: white;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 네비바 시작 */
+
+
+header {
+    width: 100%;
+}
+nav {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}  
+
+.header {
+    display: flex;
+    padding: 20px 0px;
+}
+.nav-logo {margin-top: 3px;}
+.nav-logo a {
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.search-box {
+    width: 260px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid black;
+    position: relative;
+    margin-left: 50px;
+}
+
+.search-txt {
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 215px;
+    left: 15px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.search-btn {
+    position: absolute;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    width: 30px;
+    height: 100%;
+    right: 0;
+    cursor: pointer;
+}
+
+.header-nav {
+    position: absolute;
+    display: flex;
+    font-size: 14px;
+    right: 0px;
+    margin-top: 5px;
+}
+.header-nav .nav-bdr {
+    width: 1px;
+    height: 10px;
+    margin: 5px 10px;
+    background-color: black;
+}
+
+.header-menu {
+    display: flex;  
+    padding: 20px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header-menu li {
+    margin-right: 50px;
+}
+
+
+/* 네비바 끝 */
+
+/* 배너 시작 */
+
+
+.swiper {
+    width: 100%;
+    height: 700px;
+    color: white;
+}
+
+.swiper .swiper-slide:nth-of-type(1) {
+    background: url(../img/메인배너-P.png)no-repeat center center;
+    background-size: cover;
+}
+
+.swiper .swiper-slide:nth-of-type(2) {
+    background: url(../img/산토리니-P.png)no-repeat center center;
+    background-size: cover;
+}
+
+.swiper .swiper-slide:nth-of-type(3) {
+    background: url(../img/스위스-P.png)no-repeat center center;
+    background-size: cover;
+}
+
+.swiper .swiper-slide:nth-of-type(4) {
+    background: url(../img/배너3-P.png)no-repeat center center;
+    background-size: cover;
+}
+
+.swiper-slide div {
+    width: 1200px;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.swiper-slide div>img {
+    position: absolute;
+    right: 360px;
+    width: 160px;
+    height: 37px;
+}
+
+.swiper-slide div p {
+    position: absolute;
+    font-family: 'GmarketSansMedium';
+    font-size: 60px;
+    font-weight: lighter;
+    text-align: end;
+    line-height: 75px;
+    margin-top: 60px;
+    right: 360px;
+}
+
+.swiper-slide:nth-of-type(3) div img {
+    position: absolute;
+    left: 360px;
+}
+
+.swiper-slide:nth-of-type(3) div p {
+    position: absolute;
+    text-align: left;
+    left: 360px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next:after {
+    color: #000;
+}
+
+.swiper-button-prev:after {
+    color: #000;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #000;
+}
+
+
+/* 배너 끝 */
+
+
+.bar {
+    width: 25px;
+    height: 25px;
+    /* border: 1px solid #000; */
+    position: absolute;
+    cursor: pointer;
+    right: 20px;    
+    margin-top: 3px;
+    display: none;
+    z-index: 9;
+}
+
+.bar span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.bar span:nth-of-type(1) {
+    top: 0;
+}
+
+.bar span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar span:nth-of-type(3) {
+    bottom: 0;
+}
+
+.bar span:nth-of-type(1).active {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.bar span:nth-of-type(2).active {
+    opacity: 0;
+}
+
+.bar span:nth-of-type(3).active {
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg);
+}
+.slide {
+    width: 100%;
+    height: 600px;
+    background-color: lightblue;    
+    position: absolute;
+    top: 71px;
+    right: -100%;
+    transition: all 0.3s;
+    z-index: 5;
+    display: none;
+}
+
+.slide.active {
+    right: 0;
+}   
+
+
+/* 인기 여행지 시작 */
+
+
+.popular-travel {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    /* position: relative; */
+}
+
+.popular-travel h1 {
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.popular-travel>p {
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.popular-travel .popular-box2 {display: flex;}
+.popular-box .popular-container {
+    background: url(../img/보라카이.png)no-repeat center center;
+    background-size: cover;
+    width: 1200px;
+    height: 348px;
+    margin-bottom: 22px;
+    color: white;
+}
+
+.popular-box2 .popular-container:nth-of-type(1) {
+    background: url(../img/일본오사카-2.png)no-repeat center center;
+    background-size: cover;
+    width: 400px;
+    height: 348px;
+    color: white;
+}
+
+.popular-box2 .popular-container:nth-of-type(2) {
+    background: url(../img/아이슬란드오로라-2.png)no-repeat center center;
+    background-size: cover;
+    width: 778px;
+    height: 348px;
+    margin-left: 22px;
+    color: white;
+}
+
+.popular-container h3 {
+    position: absolute;
+    padding-top: 34px;
+    padding-left: 34px;
+    font-size: 38px;    
+    font-weight: 500;
+    z-index: 99;
+}
+
+.popular-container p {
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 34px;
+    font-size: 18px;
+    z-index: 99;
+}
+
+.popular-container button {
+    position: absolute;
+    width: 332px;
+    padding: 10px 0;
+    margin: 0 auto;
+    margin-top: 270px;
+    margin-left: 34px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.popular-container>.color {
+    position: absolute;
+    width: inherit;
+    height: 340px;
+    background: linear-gradient(black, rgba(255, 255, 255, 0.158));
+    opacity: 0.5;
+}
+
+
+/* 인기 여행지 끝 */
+
+/* 다양한 여행지 시작 */
+
+
+.plus-travel {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.plus-travel h1 {
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+.plus-travel>p {
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+
+
+@media screen and (max-width:480px) {
+    nav {
+        width: 100%;
+        overflow: hidden;
+    }
+    .header{margin-left: 20px;}
+    .search-box{display: none;}
+    .header-nav{display: none;}
+    .header-menu{display: none;}
+
+
+    .swiper {
+        width: 100%;
+        height: 300px;
+        color: white;
+    }
+
+    /* .swiper-slide p {
+        z-index: 99;
+    } */
+
+    .swiper .swiper-slide:nth-of-type(1) {
+        background: url(../img/메인배너-M.png);
+    }
+
+    .swiper .swiper-slide:nth-of-type(2) {
+        background: url(../img/산토리니-M.png);
+    }
+
+    .swiper .swiper-slide:nth-of-type(3) {
+        background: url(../img/스위스-M.png);
+    }
+
+    .swiper .swiper-slide:nth-of-type(4) {
+        background: url(../img/배너3-M.png);
+    }
+
+    .swiper-slide div {
+        margin-top: 60px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .swiper-slide div img {
+        width: 71px;
+        height: 16px;
+        right: 20px;
+    }
+
+    .swiper-slide:nth-of-type(3) div img {
+        position: absolute;
+        left: 20px;
+    }
+    .swiper-slide:nth-of-type(3) div p {
+        position: absolute;
+        left: 20px;
+    }
+
+    .swiper-slide div p {
+        font-family: 'GmarketSansMedium';
+        font-size: 26px;
+        text-align: end;
+        line-height: 32px;
+        margin-top: 25px;
+        right: 20px;
+    }
+
+    .swiper-button-next:after {
+        display: none;
+    }
+
+    .swiper-button-prev:after {
+        display: none;
+    }
+
+    .header .bar{
+        display: block;
+    }
+
+    .header .slide {
+        display: block;
+    }
+
+    .popular-travel h1 {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    .popular-travel>p {
+        font-size: 16px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .popular-travel {
+        width: 100%;
+    }
+
+    .popular-box .popular-container {
+        background: url(../img/보라카이-M.png);
+        width: 440px;
+        height: 160px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .popular-travel .popular-box2 {display: block;}
+    .popular-box2 .popular-container:nth-of-type(1) {
+        background: url(../img/일본오사카-M.png);
+        width: 440px;
+        height: 160px;
+    }
+    .popular-box2 .popular-container:nth-of-type(2) {
+        background: url(../img/아이슬란드오로라-M.png);
+        width: 440px;
+        height: 160px;
+        margin: 0 auto;
+    }
+
+    .popular-container h3 {
+        font-size: 22px;
+        padding-top: 25px;
+        padding-left: 20px;
+    }
+    .popular-container p {
+        font-size: 14px;
+        padding-top: 61px;
+        padding-left: 20px;
+        font-weight: 300;
+        letter-spacing: -1px;
+    }
+
+    .popular-container p br {display: none;}
+    .popular-container p span {display: block;}
+    .popular-container button {display: none;}
+    .popular-container>.color {
+        height: 160px;
+        opacity: 0.5;
+    }
+    .plus-travel {
+        width: 100%;
+    }
+}
