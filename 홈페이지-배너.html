@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여행갈땐 에어투어</title>
     <!-- <link rel="icon" href=""> -->
-     <link rel="stylesheet" href="css/홈페이지.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/11965a13b6.js" crossorigin="anonymous"></script>
     <script src="script/jquery-3.7.1.min.js"></script>
     <script src="script/jquery-ui.min.js"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="css/홈페이지.css">
 </head>
 
 <body>
@@ -50,7 +51,7 @@
         </nav>
     </header>
     <!-- Swiper 배너 -->
-    <div class="swiper mySwiper">
+    <div class="swiper mainSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"></div>
             <div class="swiper-slide">
@@ -75,6 +76,55 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>제주도</p>
+                    <p>대한민국 남해의 위치한 섬이자,<br> 한라산과 돌하르방을 볼 수 있다.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>시드니</p>
+                    <p>오페라 하우스에서 공연을 감상한 뒤 <br>하버 브리지에서 클라이밍을 할 수 있다.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>일본</p>
+                    <p>지브리 미술관과 온천이 위치해 있으며, <br>도쿄의 디즈니랜드를 즐길 수 있습니다.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>중국</p>
+                    <p>233m의 마카오 타워와 만리장성이 있고,<br> 베네시안의 곤돌라를 체험할 수 있다.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>뉴욕</p>
+                    <p>타임스퀘어와 메트로폴리탄 미술관을 볼수 있고,<br>엠파이어 스테이트 빌딩과 빅벤이 있다.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide"></div>
+                <div class="text">
+                    <p>파리</p>
+                    <p>대표적인 건물로 에펠탑을 볼수 있으며,<br>루브르 박물관 또한 관람할 수 있다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 
     <div class="popular-travel">
@@ -146,9 +196,10 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper(".mainSwiper", {
             spaceBetween: 0,
             centeredSlides: true,
             autoplay: {
@@ -156,12 +207,32 @@
                 disableOnInteraction: false,
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".mainSwiper .swiper-pagination",
                 clickable: true,
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".mainSwiper .swiper-button-next",
+                prevEl: ".mainSwiper .swiper-button-prev",
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.2,
+            spaceBetween: 30,
+            pagination: {
+                el: ".mySwiper .swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+
+                480: {
+                    slidesPerView: 3.2,  //브라우저가 768보다 클 때
+                    spaceBetween: 30,
+                },
+            },
+            navigation: {
+                nextEl: ".mySwiper.swiper-button-next",//다음
+                prevEl: ".mySwiper.swiper-button-prev",//이전
             },
         });
 
@@ -174,14 +245,16 @@
                 //$(".slide").toggleClass("active")
 
                 if(i==0){
-                    $(".slide").stop().animate({"right":"0"});   
+                    $(".mainSwiper .slide").stop().animate({"right":"0"});   
                     i=1;
                 } else {
-                    $(".slide").stop().animate({"right":"-100%"});
+                    $(".mainSwiper .slide").stop().animate({"right":"-100%"});
                     i=0;                                                                                                                                                                         
                 }
             });
         });
+
+
     </script>
 </body>
 
