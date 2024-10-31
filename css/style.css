@@ -845,7 +845,7 @@ nav {
 .seasonSwiper {
     top: 160px;
     width: 100%;
-    height: 100%;
+    height: 800px;
     background-color: antiquewhite;
 }
 .seasonSwiper .season-main {
@@ -886,6 +886,7 @@ nav {
     margin-bottom: 80px;
     width: 500px;
     height: 590px;
+    border-radius: 14px;
 }
 .seasonSwiper .season-main .swiper-wrapper .swiper-slide:nth-of-type(1) {
     background: url(../img/일본\ 3-2.png)no-repeat center center;
@@ -895,7 +896,19 @@ nav {
     background: url(../img/일본4-2.png)no-repeat center center;
     background-size: cover;
 }
-
+.seasonSwiper .season-main .swiper-wrapper .swiper-slide {
+    color: white;
+}
+.seasonSwiper .season-main .swiper-wrapper .swiper-slide h3 {
+    margin-top: 350px;
+    margin-left: 40px;
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+.seasonSwiper .season-main .swiper-wrapper .swiper-slide p {
+    font-size: 18px;
+    margin-left: 40px;
+}
 
 
 
@@ -925,20 +938,21 @@ footer {
 .footer-box {display: flex;}
 
 .last-one {
+    width: 100px;
     font-size: 12px;
-    line-height: 30px;
+    line-height: 30px;  
+    margin-right: 80px;
 }
  
 .last-one p:nth-child(1) {
     font-weight: bold;
     color: blue;
-    margin-right: 80px;
 }
 
 .last-two {
     font-size: 12px;
     line-height: 30px;
-    margin-right: 80px;
+    margin-right: 80px; 
 }
 
 .last-three {
@@ -965,6 +979,7 @@ footer .last-txt {
     color: #d3d3d3;
     margin-bottom: 100px;
 }
+footer .footer-main>.last-txt br {display: none;}
 @media screen and (max-width:480px) {
     nav {
         width: 100%;
@@ -1183,6 +1198,22 @@ footer .last-txt {
         font-size: 20px;
         top: 85%;
     }
+    
+    .more-button a {
+        width: 54px;
+        height: 54px;
+    }
+    
+    .more-button span:nth-of-type(1) {
+        margin-top: 48px;
+        width: 2px;
+        height: 18px;
+    }
+    .more-button span:nth-of-type(2) {
+        margin-top: 48px;
+        width: 18px;
+        height: 2px;
+    }
 
 
     .ad {
@@ -1222,8 +1253,6 @@ footer .last-txt {
         height: 130px;
     }
 
-
-
     .travelSwiper {
         width: 440px;
         height: 100%;
@@ -1257,16 +1286,42 @@ footer .last-txt {
     .footer-box {
         width: 440px;
         height: 100%;
+        display: block;
     }
     .footer-box .last-one {
+        width: 440px;
         font-size: 11px;
         display: flex;
+        justify-content: space-between;
         position: absolute;
-        margin-top: -30px;
+        margin-top: -75px;
+        margin-bottom: 10px;
     }
-    .footer-box .last-one p {margin-right: 15px;}
     .footer-box .last-one p:nth-of-type(1) {
         margin-right: 0px;
+        margin-bottom: 20px;
     }
-    .footer-box .last-four {}
+    .footer-box>.footer-logo {
+        margin-bottom: 15px;
+    }
+    .footer-box .last-two {
+        line-height: 20px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+    .footer-box .last-three {
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .footer-box .last-four {
+        margin-top: -200px;
+        top: 20px;
+    }
+    footer .footer-main>.last-txt {
+        display: block;
+        color: #000;
+        font-size: 12px;
+        margin-top: 180px;
+        margin-bottom: 20px;
+    }
 }
