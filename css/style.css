@@ -23,6 +23,8 @@ body {
     padding: 0;
 }
 
+.swiper-button-next:after {color: #000;}
+.swiper-button-prev:after {color: #000;}
 
 /* 네비바 시작 */
 
@@ -34,7 +36,6 @@ nav {
     position: relative;
     width: 1200px;
     margin: 0 auto;
-    border: 1px solid black;
 }  
 
 /* .header {
@@ -136,7 +137,7 @@ nav {
     border: 1px solid black;
     position: relative;
     margin-left: 50px;
-    right: -225px;
+    right: -248px;
 }
 
 .search-txt {
@@ -237,14 +238,6 @@ nav {
     align-items: center;
 }
 
-.mainSwiper .swiper-button-next:after {
-    color: #000;
-}
-
-.mainSwiper .swiper-button-prev:after {
-    color: #000;
-}
-
 .mainSwiper .swiper-pagination-bullet-active {
     background-color: #000;
 }
@@ -276,8 +269,8 @@ nav {
     line-height: 25px;
     color: #333;
 }
-.swiper-button-next{top: 60%;}
-.swiper-button-prev{top: 60%;}
+.mySwiper .swiper-button-next{top: 60%;}
+.mySwiper .swiper-button-prev{top: 60%;}
 
 .mySwiper .swiper-wrapper .swiper-slide {
     border-radius: 20px;
@@ -529,7 +522,6 @@ nav {
     background: linear-gradient(black, rgba(255, 255, 255, 0.158));
     opacity: 0.5;
 }
-
 
 /* 인기 여행지 끝 */
 
@@ -837,93 +829,107 @@ nav {
     margin-left: 25px;
     position: absolute;
 }
-
+.travelSwiper .swiper-button-next{top: 65%;}
+.travelSwiper .swiper-button-prev{top: 65%;}
 
 /* travel여행지 끝 */
 
 /* 가을 여행 시작 */
 
-.seasonSwiper {
-    top: 160px;
+
+.season-main {
+    margin-top: 160px;
     width: 100%;
-    height: 800px;
+    height: 750px;
     background-color: antiquewhite;
 }
-.seasonSwiper .season-main {
+.season-main .seaWrap {
     position: relative;
     width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
-    border: 1px solid black;
 }
-.seasonSwiper .season-main h1 {
+
+.season-main h1 {
     font-size: 36px;
     margin-bottom: 16px;
     margin-top: 80px;
 }
-.seasonSwiper .season-main p {
+.season-main p {
     font-size: 18px;
-    margin-bottom: 45px;
+    margin-bottom: 60px;
     line-height: 25px;
 }
-.seasonSwiper .season-Button {
-    width: 200px;
+.season-main .season-Button {
+    width: 220px;
     top: 45px;
 }
-.seasonSwiper .season-Button .seaseon-button {
+.season-Button .season-btn {
     background-color: rgba(0,0,0,0.2);
     text-align: center;
     color: white;
     border: 1px solid white;
     padding: 8px 0;
-    margin: 18px 0;
+    margin: 26px 0;
 }
-.seasonSwiper .season-Button .seaseon-button:active {
+.season-main .season-Button .season-btn:active {
     background-color: blue;
     border: 1px solid blue;
 }
-.seasonSwiper .season-main .swiper-wrapper {
+.season-main .seaWrap .seasonSwiper {
+    position: relative;
     width: 890px;
-    height: 590px;
+    height: 100%;
+    margin-right: 0;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide {
-    top: 80px;
+.season-main .seaWrap .seasonSwiper .swiper-wrapper .swiper-slide {
+    position: relative;
     margin-bottom: 80px;
     width: 500px;
     height: 590px;
     border-radius: 14px;
+    color: white;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide:nth-of-type(1) {
+.season-main .seaWrap .seasonSwiper .swiper-wrapper .swiper-slide:nth-of-type(1) {
     background: url(../img/일본\ 3-2.png)no-repeat center center;
     background-size: cover;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide:nth-of-type(2) {
+.season-main .seaWrap .seasonSwiper .swiper-wrapper .swiper-slide:nth-of-type(2) {
     background: url(../img/일본4-2.png)no-repeat center center;
     background-size: cover;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide {
-    color: white;
+.season-main .seaWrap .seasonSwiper .swiper-wrapper .swiper-slide .seasonBox {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 14px;
+    background: linear-gradient(rgba(255, 255, 255, 0.158), black);
+    opacity: 0.3;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide h3 {
-    margin-top: 350px;
+.seasonSwiper .swiper-wrapper .swiper-slide h3 {
+    position: absolute;
+    margin-top: 400px;
     margin-left: 40px;
     margin-bottom: 8px;
-    font-size: 28px;
+    font-size: 38px;
 }
-.seasonSwiper .season-main .swiper-wrapper .swiper-slide p {
-    font-size: 18px;
+.seasonSwiper .swiper-wrapper .swiper-slide p {
+    position: absolute;
+    font-size: 22px;
+    margin-top: 455px;
     margin-left: 40px;
+    line-height: 28px;
 }
-
-
+.seasonSwiper .swiper-button-next{top: 42%;}
+.seasonSwiper .swiper-button-prev{top: 42%;}
 
 
 
 footer {
     width: 100%;
     margin: 0 auto;
-    margin-top: 250px;
+    margin-top: 80px;
     border-top: 1px solid black;
 }
 
@@ -1096,6 +1102,8 @@ footer .footer-main>.last-txt br {display: none;}
         font-size: 16px;
         margin-bottom: 50px;
     }
+    .mySwiper .swiper-button-next{top: 68%;}
+    .mySwiper .swiper-button-prev{top: 68%;}
 
     .header .bar{
         display: block;
@@ -1287,6 +1295,79 @@ footer .footer-main>.last-txt br {display: none;}
         border-radius: 20px;
     }
 
+
+    .season-main {
+        width: 480px;
+        height: 725px;
+    }
+    .season-main .seaWrap {
+        width: 440px;
+        height: 780px;
+        display: block;
+    }
+    
+    .season-main h1 {
+        position: relative;
+        font-size: 30px;
+        top: 80px;
+        margin-bottom: 10px;
+    }
+    .season-main .season>p {
+        position: relative;
+        font-size: 16px;
+        margin-bottom: 28px;
+        top: 80px;
+    }
+    .season-main h1 br {display: none;}
+    .season-main .season>p br {display: none;}
+    .season-main .season-Button {
+        position: relative;
+        width: 440px;
+        display: flex;
+        justify-content: space-between;
+        top: 80px;
+    }
+    .season-Button .season-btn {
+        display: block;
+        width: 80px;
+        font-size: 14px;
+        padding: 2px 0px;
+        margin: 0px;
+    }
+    .season-main .seaWrap .seasonSwiper {
+        margin-top: 158px;
+        position: absolute;
+        width: 440px;
+        height: 407px;
+        margin-right: 0;
+    }
+    .season-main .seaWrap .seasonSwiper .swiper-wrapper {
+        margin-bottom: 80px;
+    }
+    .season-main .seaWrap .seasonSwiper .swiper-wrapper .swiper-slide {
+        width: 345px;
+        height: 407px;
+        border-radius: 14px;
+        color: white;
+    }
+    .seasonSwiper .swiper-wrapper .swiper-slide h3 {
+        position: absolute;
+        margin-top: 290px;
+        margin-left: 20px;
+        margin-bottom: 8px;
+        font-size: 28px;
+    }
+    .seasonSwiper .swiper-wrapper .swiper-slide p {
+        position: absolute;
+        font-size: 16px;
+        margin-top: 330px;
+        margin-left: 20px;
+        line-height: 22px;
+    }
+    .seasonSwiper .swiper-button-next{top: 50%;}
+    .seasonSwiper .swiper-button-prev{top: 50%;}
+
+    footer {margin-top: 80px;}
     .footer-main {
         width: 440px;
         height: 100%;
